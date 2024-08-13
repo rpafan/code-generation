@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{417C9E6C-0BD1-4B9D-801C-C14C11FCAB11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CodeGeneration</RootNamespace>
+    <AssemblyName>CodeGeneration</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Efficiency.Communications">
+      <HintPath>Lib\Efficiency.Communications.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.Core">
+      <HintPath>Lib\Efficiency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.LiteDB">
+      <HintPath>Lib\Efficiency.LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.PostgreSql">
+      <HintPath>Lib\Efficiency.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.Reporting">
+      <HintPath>Lib\Efficiency.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.SQLite">
+      <HintPath>Lib\Efficiency.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.Storage">
+      <HintPath>Lib\Efficiency.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.Web">
+      <HintPath>Lib\Efficiency.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Efficiency.Widgets">
+      <HintPath>Lib\Efficiency.Widgets.dll</HintPath>
+    </Reference>
+    <Reference Include="Scintilla.NET, Version=5.3.2.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Scintilla.NET.5.3.2.9\lib\net45\Scintilla.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="STP.Core">
+      <HintPath>Lib\STP.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeGenerator.cs" />
+    <Compile Include="CodeSynchronizer.cs" />
+    <Compile Include="FieldDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FieldDialog.Designer.cs">
+      <DependentUpon>FieldDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GptDialog.Designer.cs">
+      <DependentUpon>GptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HideFieldsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HideFieldsDialog.Designer.cs">
+      <DependentUpon>HideFieldsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScintillaEditor.cs" />
+    <Compile Include="SelectTablesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectTablesDialog.Designer.cs">
+      <DependentUpon>SelectTablesDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FieldDialog.resx">
+      <DependentUpon>FieldDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GptDialog.resx">
+      <DependentUpon>GptDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HideFieldsDialog.resx">
+      <DependentUpon>HideFieldsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SelectTablesDialog.resx">
+      <DependentUpon>SelectTablesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Scintilla.NET.5.3.2.9\build\scintilla.net.targets" Condition="Exists('packages\Scintilla.NET.5.3.2.9\build\scintilla.net.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Scintilla.NET.5.3.2.9\build\scintilla.net.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Scintilla.NET.5.3.2.9\build\scintilla.net.targets'))" />
+  </Target>
+</Project>
